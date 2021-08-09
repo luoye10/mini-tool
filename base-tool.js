@@ -18,13 +18,16 @@
         addClass(name) {
             const className = this.el.className + ' ' + name;
             this.el.className = className;
+            return this;
         }
         removeClass(name) {
             const className = this.el.className.replace(name, '').trim();
             this.el.className = className;
+            return this;
         }
         text(text) {
             this.el.innerText = text;
+            return this;
         }
     }
 })(window);
