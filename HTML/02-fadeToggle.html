@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淡入淡出</title>
+    <style>
+        .in,.out,.toggle{
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background: aqua;
+            color: white;
+            border-radius: 2px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: aqua;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: green;
+            margin: 20px 0;
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        .active{
+            height: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="out">淡出</div>
+    <div class="in">淡入</div>
+    <div class="toggle">切换</div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <script src="../JS/base-tool.js"></script>
+    <script>
+        zz('.out').click(function(){
+            zz('.box1').fadeOut('slow','active')
+            zz('.box2').fadeOut(1000,'active')
+            zz('.box3').fadeOut('fast','active')
+        })
+        zz('.in').click(function(){
+            zz('.box1').fadeIn('fast','active')
+            zz('.box2').fadeIn(1000,'active')
+            zz('.box3').fadeIn('slow','active')
+        })
+        zz('.toggle').click(function(){
+            zz('.box1').fadeToggle('active')
+            zz('.box2').fadeToggle('active')
+            zz('.box3').fadeToggle('active')
+        })
+    </script>
+</body>
+</html>
