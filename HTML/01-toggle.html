@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle</title>
+    <style>
+        div,p{
+            margin: 0;
+            padding: 0;
+        }
+        .hide,.show,.toggle{
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background: aqua;
+            color: white;
+            border-radius: 5px;
+            margin: 10px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .active{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="hide">隐藏</div>
+    <div class="show">显示</div>
+    <div class="toggle">切换</div>
+    <p>这是一段内容</p>
+</body>
+<script src="../JS/base-tool.js"></script>
+<script>
+    zz('.hide').click(function(){
+        zz('p').addClass('active')
+    })
+    zz('.show').click(function(){
+        zz('p').removeClass('active')
+    })
+    zz('.toggle').click(function(){
+        zz('p').toggle('active')
+    })
+</script>
+</html>
