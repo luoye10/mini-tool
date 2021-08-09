@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+    <style>
+        .up,.down,.toggle{
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background: aqua;
+            color: white;
+            border-radius: 2px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .text{
+            font-size: 24px;
+            text-align: center;
+            color: aqua;
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            border: 1px solid #abf;
+        }
+        .active{
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="up">向上</div>
+    <div class="down">向下</div>
+    <div class="toggle">切换</div>
+    <div class="text">
+        <p>黄河远上白云间</p>
+        <p>一片孤城万仞山</p>
+        <p>仰天大笑出门去</p>
+        <p>我辈岂是篷篙人</p>
+        <p>天子呼来不上船</p>
+        <p>自称臣是酒中仙</p>
+    </div>
+    <script src="../JS/base-tool.js"></script>
+    <script>
+        zz('.up').click(function(){
+            zz('.text').slideUp('slow','active')
+        })
+        zz('.down').click(function(){
+            zz('.text').slideDown('fast','active')
+        })
+        zz('.toggle').click(function(){
+            zz('.text').slideToggle(1000,'active')
+        })
+    </script>
+</body>
+</html>
