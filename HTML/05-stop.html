@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .stop,.flip{
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+            background: aqua;
+            color: white;
+            border-radius: 2px;
+            cursor: pointer;
+            margin: 10px 40px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .box{
+            width: 300px;
+            height: 400px;
+            border: 1px solid aqua;
+            color: pink;
+            text-align: center;
+            font-size: 20px;
+            overflow: hidden;
+        }
+        .active{
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="stop">停止</div>
+    <div class="flip">点击</div>
+    <div class="contiue"></div>
+    <div class="box">
+        <p>黄河远上白云间</p>
+        <p>一片孤城万仞山</p>
+        <p>仰天大笑出门去</p>
+        <p>我辈岂是篷篙人</p>
+        <p>天子呼来不上船</p>
+        <p>自称臣是酒中仙</p>
+    </div>
+    <script src="../JS/base-tool.js"></script>
+    <!-- <script src="../JS/jquery.js"></script> -->
+    <script>
+        // $(document).ready(function(){
+        //     $('.flip').click(function(){
+        //         $('.box').slideToggle(3000)
+        //     })
+        //     $('.stop').click(function(){
+        //         $('.box').stop()
+        //     })
+        // })
+        var box = zz('.box')
+        zz('.flip').click(function(){
+            box.startAnimation('slow',{height:'0'})
+        })
+        zz('.stop').click(function(){
+            box.stop('height')
+        })
+    </script>
+</body>
+</html>
