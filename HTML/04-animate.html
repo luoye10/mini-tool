@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .begin{
+            width: 100px;
+            height: 30px;
+            background: aqua;
+            color: white;
+            border-radius: 2px;
+            margin: 10px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 30px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: aqua;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-size: 18px;
+            opacity: 1;
+            margin: 10px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="begin">开始动画</div>
+    <div class="box">HELLO</div>
+    <script src="../JS/base-tool.js"></script>
+    <script>
+        zz('.begin').click(function(){
+            var box = zz('.box');
+            setTimeout(function(){
+                box.animate({width:'300px',opacity:'0.2',fontSize:'2em'},'slow');
+            },1000)
+            setTimeout(function(){
+                box.animate({height:'300px',opacity:'0.4',fontSize:'3em'},'slow');
+            },2000)
+            setTimeout(function(){
+                box.animate({width:'100px',opacity:'0.6',fontSize:'2em'},'slow');
+            },3000)
+            setTimeout(function(){
+                box.animate({height:'100px',opacity:'0.8',fontSize:'1em'},'slow');
+            },4000)
+        })
+    </script>
+</body>
+</html>
