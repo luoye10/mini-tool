@@ -64,6 +64,34 @@
             this.animation(speed)
             this.toggle(name)
         }
+        animate(obj,speed){
+            this.animation(speed)
+            for(var key in obj){
+                this.el.style[key] = obj[key]
+            }
+        }
+        stop(name){
+            this.el.style[name] = this.getStyle(this.el,name)
+            this.el.style.transition = ''
+            this.aniObj.stop = {}
+            this.aniObj.stop[name] = this.el.style[name]
+        }
+        startAnimation(speed, obj){
+            if(this.aniObj){
+                this.animation(speed)
+                for(var key in this.aniObj.start){
+                    this.el.style[key] = this.aniObj.start[key]
+                }
+                return
+            }
+            this.aniObj = {
+                start: obj,
+            }
+            this.animation(speed)
+            for(var key in obj){
+                this.el.style[key] = obj[key]
+            }
+        }
         animation(speed){
             var time
             if(speed === 'fast'){
@@ -86,5 +114,12 @@
                 });
             }
         };
+        getStyle(obj,name){
+            if(window.getComputedStyle){
+                return getComputedStyle(obj,null)[name]
+            }else{
+                return obj.currentStyle[name]
+            }
+        }
     }
 })(window);
