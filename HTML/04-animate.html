@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .begin{
+        .begin {
             width: 100px;
             height: 30px;
             background: aqua;
@@ -17,7 +18,8 @@
             text-align: center;
             line-height: 30px;
         }
-        .box{
+
+        .box {
             width: 100px;
             height: 100px;
             background: aqua;
@@ -31,26 +33,49 @@
         }
     </style>
 </head>
+
 <body>
     <div class="begin">开始动画</div>
     <div class="box">HELLO</div>
     <script src="../JS/base-tool.js"></script>
     <script>
-        zz('.begin').click(function(){
+        zz('.begin').click(function () {
             var box = zz('.box');
-            setTimeout(function(){
-                box.animate({width:'300px',opacity:'0.2',fontSize:'2em'},'slow');
-            },1000)
-            setTimeout(function(){
-                box.animate({height:'300px',opacity:'0.4',fontSize:'3em'},'slow');
-            },2000)
-            setTimeout(function(){
-                box.animate({width:'100px',opacity:'0.6',fontSize:'2em'},'slow');
-            },3000)
-            setTimeout(function(){
-                box.animate({height:'100px',opacity:'0.8',fontSize:'1em'},'slow');
-            },4000)
+            var animates = [
+                {
+                    style: {
+                        width: '300px', opacity: '0.2', fontSize: '2em'
+                    },
+                    time: 1000
+                },
+                {
+                    style: { height: '300px', opacity: '0.4', fontSize: '3em' },
+                    time: 700
+                },
+                {
+                    style: { width: '100px', opacity: '0.6', fontSize: '2em' },
+                    time: 1000
+                },
+                {
+                    style: { height: '100px', opacity: '0.8', fontSize: '1em' },
+                    time: 500
+                }
+            ]
+            function run(i) {
+                if (i >= animates.length) {
+                    return
+                }
+                var item = animates[i];
+                box.animate(item.style, item.time);
+                // setTimeout(function () {
+                //     run(i + 1)
+                // }, item.time)
+                // 第二种写法
+                setTimeout(run, item.time, i + 1)
+            }
+            run(0)
         })
     </script>
 </body>
+
 </html>
