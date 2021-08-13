@@ -27,9 +27,6 @@
             font-size: 20px;
             overflow: hidden;
         }
-        .active{
-            height: 0;
-        }
     </style>
 </head>
 <body>
@@ -45,16 +42,7 @@
         <p>自称臣是酒中仙</p>
     </div>
     <script src="../JS/base-tool.js"></script>
-    <!-- <script src="../JS/jquery.js"></script> -->
     <script>
-        // $(document).ready(function(){
-        //     $('.flip').click(function(){
-        //         $('.box').slideToggle(3000)
-        //     })
-        //     $('.stop').click(function(){
-        //         $('.box').stop()
-        //     })
-        // })
         var box = zz('.box')
         zz('.flip').click(function(){
             box.startAnimation('slow',{height:'0'})
