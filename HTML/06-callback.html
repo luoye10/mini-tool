@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flip{
+            width: 200px;
+            height: 30px;
+            font-size: 20px;
+            color: pink;
+            border: 1px solid aqua;
+            margin: 50px auto 0 auto;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .box{
+            font-size: 18px;
+            text-align: center;
+            color: #c55;
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 1px solid aqua;
+        }
+        .active{
+            width: 0;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="flip">点击</div>
+    <div class="box">
+        <p>黄河远上白云间</p>
+        <p>一片孤城万仞山</p>
+        <p>仰天大笑出门去</p>
+        <p>我辈岂是篷篙人</p>
+        <p>天子呼来不上船</p>
+        <p>自称臣是酒中仙</p>
+    </div>
+    <script src="../JS/base-tool.js"></script>
+    <script>
+        zz('.flip').click(function(){
+            zz('.box').hide(2000, 'active', function(){
+                alert('这段文字已经隐藏起来了!!!')
+            })
+        })
+    </script>
+</body>
+</html>
