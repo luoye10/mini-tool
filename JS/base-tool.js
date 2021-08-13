@@ -92,6 +92,19 @@
                 this.el.style[key] = obj[key]
             }
         }
+        hide(speed,name,fn){
+            this.slideUp(speed,name)
+            setTimeout(function(){
+                fn()
+            }, (speed + 1000))
+        }
+        setStyle(styleStr, valueStr){
+            for(var key in this.el){
+                if(key === styleStr){
+                    this.el.style[key] = valueStr
+                }
+            }
+        }
         animation(speed){
             var time
             if(speed === 'fast'){
