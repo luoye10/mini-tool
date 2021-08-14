@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text,.html{
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            background: aqua;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .btn,.show{
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            background: aqua;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="word">这是一段<b>粗体</b>文字</div>
+    <div class="text">显示文本</div>
+    <div class="html">显示HTML</div>
+    <p>姓名：<input type="text" class="test" value="米老鼠"></p>
+    <div class="btn">显示值</div>
+    <p><a href="http://www.baidu.com" class="baidu">baidu.com</a></p>
+    <div class="show">显示 href 值</div>   
+    <script src="../JS/base-tool.js"></script>
+    <script>
+        zz('.text').click(function(){
+            alert(zz('.word').text())
+        })
+        zz('.html').click(function(){
+            alert(zz('.word').html())
+        })
+        zz('.btn').click(function(){
+            alert(zz('.test').Val())
+        })
+    </script>
+</body>
+</html>
