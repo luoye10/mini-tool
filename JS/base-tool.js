@@ -26,8 +26,14 @@
             return this
         }
         text(text) {
-            this.el.innerText = text;
-            return this
+            if(text){
+                this.el.innerText = text;
+                return this
+            }else{
+                var str = ''
+                str += this.el.innerText
+                return str
+            }
         }
         toggle(name){
             if(this.el.className.indexOf(name)  > -1){
@@ -104,6 +110,29 @@
                     this.el.style[key] = valueStr
                 }
             }
+        }
+        html(para){
+            if(!para){
+                var str = ''
+                str += this.el.innerHTML
+                return str
+            }else{
+                this.el.innerHTML = para
+                return this
+            }
+        }
+        Val(para){
+            if(!para){
+                var str = ''
+                str += this.el.value
+                return str
+            }else{
+                this.el.value = para
+                return this
+            }
+        }
+        attr(name){
+            this.getStyle(this.el,name)
         }
         animation(speed){
             var time
