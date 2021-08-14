@@ -131,9 +131,6 @@
                 return this
             }
         }
-        attr(name){
-            this.getStyle(this.el,name)
-        }
         animation(speed){
             var time
             if(speed === 'fast'){
