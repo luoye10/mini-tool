@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .flip {
+                width: 50px;
+                height: 30px;
+                color: white;
+                background: aqua;
+                border-radius: 5px;
+                margin: 10px;
+                text-align: center;
+                line-height: 30px;
+                cursor: pointer;
+            }
+            .active {
+                height: 0;
+            }
+            .item {
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="text">这是一段文字</div>
+        <div class="flip">点击</div>
+        <script src="../JS/base-tool.js"></script>
+        <script>
+            zz('.flip').click(function () {
+                zz('.text').setStyle('color', 'yellow').slideUp(2000, 'active').slideDown(2000, 'item');
+            });
+        </script>
+    </body>
+</html>
